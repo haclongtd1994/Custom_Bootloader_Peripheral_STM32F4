@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := DataCopyFlashToSRAM
+BUILD_ARTIFACT_NAME := 003_DataCopyFlashToSRAM
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-DataCopyFlashToSRAM.elf \
+003_DataCopyFlashToSRAM.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-DataCopyFlashToSRAM.list \
+003_DataCopyFlashToSRAM.list \
 
 OBJCOPY_BIN += \
-DataCopyFlashToSRAM.bin \
+003_DataCopyFlashToSRAM.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: DataCopyFlashToSRAM.elf secondary-outputs
+main-build: 003_DataCopyFlashToSRAM.elf secondary-outputs
 
 # Tool invocations
-DataCopyFlashToSRAM.elf: $(OBJS) $(USER_OBJS) C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\DataCopyFlashToSRAM\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DataCopyFlashToSRAM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\DataCopyFlashToSRAM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DataCopyFlashToSRAM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+003_DataCopyFlashToSRAM.elf: $(OBJS) $(USER_OBJS) C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\DataCopyFlashToSRAM\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "003_DataCopyFlashToSRAM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\DataCopyFlashToSRAM\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="003_DataCopyFlashToSRAM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,19 +70,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-DataCopyFlashToSRAM.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "DataCopyFlashToSRAM.list"
+003_DataCopyFlashToSRAM.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "003_DataCopyFlashToSRAM.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-DataCopyFlashToSRAM.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "DataCopyFlashToSRAM.bin"
+003_DataCopyFlashToSRAM.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "003_DataCopyFlashToSRAM.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) DataCopyFlashToSRAM.elf
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) 003_DataCopyFlashToSRAM.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

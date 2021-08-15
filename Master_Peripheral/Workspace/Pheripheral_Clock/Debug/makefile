@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Pheripheral_Clock
+BUILD_ARTIFACT_NAME := 004_Pheripheral_Clock
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Pheripheral_Clock.elf \
+004_Pheripheral_Clock.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Pheripheral_Clock.list \
+004_Pheripheral_Clock.list \
 
 OBJCOPY_BIN += \
-Pheripheral_Clock.bin \
+004_Pheripheral_Clock.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Pheripheral_Clock.elf secondary-outputs
+main-build: 004_Pheripheral_Clock.elf secondary-outputs
 
 # Tool invocations
-Pheripheral_Clock.elf: $(OBJS) $(USER_OBJS) C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\Pheripheral_Clock\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Pheripheral_Clock.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\Pheripheral_Clock\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Pheripheral_Clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+004_Pheripheral_Clock.elf: $(OBJS) $(USER_OBJS) C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\Pheripheral_Clock\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "004_Pheripheral_Clock.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\Pheripheral_Clock\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="004_Pheripheral_Clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,19 +70,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Pheripheral_Clock.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Pheripheral_Clock.list"
+004_Pheripheral_Clock.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "004_Pheripheral_Clock.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Pheripheral_Clock.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Pheripheral_Clock.bin"
+004_Pheripheral_Clock.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "004_Pheripheral_Clock.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) Pheripheral_Clock.elf
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) 004_Pheripheral_Clock.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

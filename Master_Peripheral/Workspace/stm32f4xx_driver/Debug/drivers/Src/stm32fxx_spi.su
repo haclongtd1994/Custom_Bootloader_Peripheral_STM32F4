@@ -1,0 +1,11 @@
+stm32fxx_spi.c:21:6:SPI_PeriClockControl	16	static
+stm32fxx_spi.c:51:6:SPI_Init	24	static
+stm32fxx_spi.c:102:6:SPI_DeInit	16	static
+stm32fxx_spi.c:123:6:SPI_EnableSPI	16	static
+stm32fxx_spi.c:146:6:SPI_EnableNSSPin	16	static
+stm32fxx_spi.c:169:6:SPI_EnableSSOEPin	16	static
+stm32fxx_spi.c:192:9:GetStatusFlag	16	static
+stm32fxx_spi.c:211:6:SPI_SendData	24	static
+stm32fxx_spi.c:246:6:SPI_ReceiveData	24	static
+stm32fxx_spi.c:265:6:SPI_IRQConfig	16	static
+stm32fxx_spi.c:280:6:SPI_IRQHandling	16	static

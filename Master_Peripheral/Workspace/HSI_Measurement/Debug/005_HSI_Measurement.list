@@ -95,6 +95,8 @@ int main(void)
  80001f0:	4a14      	ldr	r2, [pc, #80]	; (8000244 <main+0x5c>)
  80001f2:	f423 03c0 	bic.w	r3, r3, #6291456	; 0x600000
  80001f6:	6013      	str	r3, [r2, #0]
+
+	// --------- divide 4 ---------
 	RCC_CFGR_VALUE |= (1<<26);
  80001f8:	4b12      	ldr	r3, [pc, #72]	; (8000244 <main+0x5c>)
  80001fa:	681b      	ldr	r3, [r3, #0]

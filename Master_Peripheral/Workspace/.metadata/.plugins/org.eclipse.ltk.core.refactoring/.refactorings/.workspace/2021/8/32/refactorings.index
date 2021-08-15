@@ -2,3 +2,5 @@
 1627793182667	Rename resource 'DataCopyFlashToSRAM'
 1627793204634	Rename resource 'HSI_Measurement'
 1627793211425	Rename resource 'Pheripheral_Clock'
+1628253535351	Rename resource 'BareMetaEmbedded'
+1628256466343	Delete resource '007_BareMetaEmbedded'

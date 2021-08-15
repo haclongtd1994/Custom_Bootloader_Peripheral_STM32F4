@@ -1,0 +1,6 @@
+"./Src/007_SPI_TXOnly_Arduino.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Startup/startup_stm32f407vgtx.o"
+"./drivers/Src/stm32f4xx_gpio.o"
+"./drivers/Src/stm32fxx_spi.o"

@@ -1,23 +1,10 @@
-11:23:49 **** Build of configuration Debug for project 001_Hello_Project ****
+18:00:59 **** Incremental Build of configuration Debug for project 001_Hello_Project ****
 make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "001_Hello_Project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Git\Custom_Bootloader_Peripheral_STM32F4\Master_Peripheral\Workspace\Hello_Project\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001_Hello_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 001_Hello_Project.elf
- 
 arm-none-eabi-size   001_Hello_Project.elf 
-arm-none-eabi-objdump -h -S  001_Hello_Project.elf  > "001_Hello_Project.list"
-arm-none-eabi-objcopy  -O binary  001_Hello_Project.elf  "001_Hello_Project.bin"
    text	   data	    bss	    dec	    hex	filename
    3656	    108	   1596	   5360	   14f0	001_Hello_Project.elf
 Finished building: default.size.stdout
  
-Finished building: 001_Hello_Project.bin
-Finished building: 001_Hello_Project.list
- 
- 
 
-11:23:49 Build Finished. 0 errors, 0 warnings. (took 478ms)
+18:00:59 Build Finished. 0 errors, 0 warnings. (took 167ms)
 
